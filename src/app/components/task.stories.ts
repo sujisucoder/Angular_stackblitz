@@ -1,50 +1,61 @@
 
-import { Meta, Story } from '@storybook/angular';
+import { Meta, StoryObj } from '@storybook/angular';
 
 import { action } from '@storybook/addon-actions';
 
 import { TaskComponent } from './task.component';
 
-export default {
-  component: TaskComponent,
+const meta: Meta<TaskComponent> = {
+  /* 👇 The title prop is optional.
+   * See https://storybook.js.org/docs/angular/configure/overview#configure-story-loading
+   * to learn how to generate automatic titles
+   */
   title: 'Task',
-  excludeStories: /.*Data$/,
-} as Meta;
+  component: TaskComponent,
+};
+
+export default meta;
+type Story = StoryObj<TaskComponent>;
+
 
 export const actionsData = {
   onPinTask: action('onPinTask'),
   onArchiveTask: action('onArchiveTask'),
 };
 
-const Template: Story = args => ({
-  props: {
-    ...args,
-    onPinTask: actionsData.onPinTask,
-    onArchiveTask: actionsData.onArchiveTask,
-  },
-});
 
-export const Default = Template.bind({});
-Default.args = {
-  task: {
-    id: '1',
-    title: 'Test Task',
-    state: 'TASK_INBOX',
+export const Default: Story = {
+  args: {
+    task: {
+      id: '1',
+      title: 'Test Task',
+      state: 'TASK_INBOX',
+    },
   },
 };
 
-export const Pinned = Template.bind({});
-Pinned.args = {
-  task: {
-    ...Default.args['task'],
-    state: 'TASK_PINNED',
+
+export const Pinned: Story = {
+  args: {
+    task: {
+      ...Default.args?.task,
+      state: 'TASK_PINNED',
+    },
   },
 };
 
-export const Archived = Template.bind({});
-Archived.args = {
-  task: {
-    ...Default.args['task'],
-    state: 'TASK_ARCHIVED',
+
+
+export const Archived: Story = {
+  args: {
+    task: {
+      ...Default.args?.task,
+      state: 'TASK_ARCHIVED',
+    },
   },
 };
+
+
+
+
+
