@@ -184,6 +184,47 @@
             "methods": []
         },
         {
+            "name": "Task",
+            "id": "interface-Task-024fa2e2789011ffe3fc7df3320de0129767070c509135e9317fbac8889fb991be743d074af6eaf53f4243aa866670ac5f40c0c3de86d72a73c6d3d419d4505d",
+            "file": "src/app/models/task.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Interface } from \"readline\";\r\n\r\nexport interface  Task{\r\n  id:string;\r\n  title:string;\r\n  state:string;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "state",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
             "name": "User",
             "id": "interface-User-9c7e5f1bbbab702cb032307d130876cb68969b0cd4eedef32a0c8cad8081a54e5f8f577ed6ad4539c1b99a1d246cb34031d198c2ea8eba440e64e91b14f01fdc",
             "file": "src/stories/User.ts",
@@ -1101,7 +1142,7 @@
         },
         {
             "name": "TaskComponent",
-            "id": "component-TaskComponent-dc6f5c0a23c7ec54c23d06ddd713d902733fa32c35160017fe22049e5acbee79aa6fa479956e174421f65a556fb088c9d6a88003a3754a1ddb2a7a2d1d0d3f05-1",
+            "id": "component-TaskComponent-737a498535969cc186ae6d7d7e741b871c970e68dadafa5858115801ac69ba4e33dec660940d1b78d41c8c8f68296bfccb0c4f9c0dd9033901f6ba78fd42242b-1",
             "file": "src/app/components/task.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1111,7 +1152,7 @@
             "selector": "app-task",
             "styleUrls": [],
             "styles": [],
-            "template": "<div class=\"list-item\">\n  <label [attr.aria-label]=\"task.title + ''\" for=\"title\">\n    <input\n      type=\"text\"\n      [value]=\"task.title\"\n      readonly=\"true\"\n      id=\"title\"\n      name=\"title\"\n    />\n  </label>\n</div>\n",
+            "template": "  <div class=\"list-item {{ task?.state }}\">\n  <label\n    [attr.aria-label]=\"'archiveTask-' + task.id\"\n    for=\"checked-{{ task?.id }}\"\n    class=\"checkbox\"\n  >\n    <input\n      type=\"checkbox\"\n      disabled=\"true\"\n      [defaultChecked]=\"task?.state === 'TASK_ARCHIVED'\"\n      name=\"checked-{{ task?.id }}\"\n      id=\"checked-{{ task?.id }}\"\n    />\n    <span class=\"checkbox-custom\" (click)=\"onArchive(task.id)\"></span>\n  </label>\n  <label\n    [attr.aria-label]=\"task.title + ''\"\n    for=\"title-{{ task?.id }}\"\n    class=\"title\"\n  >\n    <input\n      type=\"text\"\n      [value]=\"task.title\"\n      readonly=\"true\"\n      id=\"title-{{ task?.id }}\"\n      name=\"title-{{ task?.id }}\"\n      placeholder=\"Input title\"\n    />\n  </label>\n  <button\n    *ngIf=\"task?.state !== 'TASK_ARCHIVED'\"\n    class=\"pin-button\"\n    [attr.aria-label]=\"'pinTask-' + task.id\"\n    (click)=\"onPin(task.id)\"\n  >\n    <span class=\"icon-star\"></span>\n  </button>\n</div>\n",
             "templateUrl": [],
             "viewProviders": [],
             "inputsClass": [
@@ -1119,7 +1160,7 @@
                     "name": "task",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 48,
                     "type": "any",
                     "decorators": []
                 }
@@ -1130,7 +1171,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 29,
+                    "line": 56,
                     "type": "EventEmitter"
                 },
                 {
@@ -1138,7 +1179,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 25,
+                    "line": 52,
                     "type": "EventEmitter"
                 }
             ],
@@ -1151,7 +1192,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-task',\r\n  template: `\r\n    <div class=\"list-item\">\r\n      <label [attr.aria-label]=\"task.title + ''\" for=\"title\">\r\n        <input\r\n          type=\"text\"\r\n          [value]=\"task.title\"\r\n          readonly=\"true\"\r\n          id=\"title\"\r\n          name=\"title\"\r\n        />\r\n      </label>\r\n    </div>\r\n  `,\r\n})\r\nexport class TaskComponent {\r\n  @Input() task: any;\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output()\r\n  onPinTask = new EventEmitter<Event>();\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output()\r\n  onArchiveTask = new EventEmitter<Event>();\r\n}",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-task',\r\n  template: `\r\n  <div class=\"list-item {{ task?.state }}\">\r\n  <label\r\n    [attr.aria-label]=\"'archiveTask-' + task.id\"\r\n    for=\"checked-{{ task?.id }}\"\r\n    class=\"checkbox\"\r\n  >\r\n    <input\r\n      type=\"checkbox\"\r\n      disabled=\"true\"\r\n      [defaultChecked]=\"task?.state === 'TASK_ARCHIVED'\"\r\n      name=\"checked-{{ task?.id }}\"\r\n      id=\"checked-{{ task?.id }}\"\r\n    />\r\n    <span class=\"checkbox-custom\" (click)=\"onArchive(task.id)\"></span>\r\n  </label>\r\n  <label\r\n    [attr.aria-label]=\"task.title + ''\"\r\n    for=\"title-{{ task?.id }}\"\r\n    class=\"title\"\r\n  >\r\n    <input\r\n      type=\"text\"\r\n      [value]=\"task.title\"\r\n      readonly=\"true\"\r\n      id=\"title-{{ task?.id }}\"\r\n      name=\"title-{{ task?.id }}\"\r\n      placeholder=\"Input title\"\r\n    />\r\n  </label>\r\n  <button\r\n    *ngIf=\"task?.state !== 'TASK_ARCHIVED'\"\r\n    class=\"pin-button\"\r\n    [attr.aria-label]=\"'pinTask-' + task.id\"\r\n    (click)=\"onPin(task.id)\"\r\n  >\r\n    <span class=\"icon-star\"></span>\r\n  </button>\r\n</div>\r\n  `,\r\n})\r\nexport class TaskComponent {\r\n  @Input() task: any;\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output()\r\n  onPinTask = new EventEmitter<Event>();\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output()\r\n  onArchiveTask = new EventEmitter<Event>();\r\n}",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -1462,8 +1503,8 @@
                 "file": "src/app/components/task.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    task: {\r\n      ...Default.args?.task,\r\n      state: 'TASK_ARCHIVED',\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "Default",
@@ -1472,8 +1513,8 @@
                 "file": "src/app/components/task.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    task: {\r\n      id: '1',\r\n      title: 'Test Task',\r\n      state: 'TASK_INBOX',\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "Large",
@@ -1556,14 +1597,24 @@
                 "defaultValue": "{\n  title: 'Example/Page',\n  component: Page,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n    layout: 'fullscreen',\n  },\n  decorators: [\n    moduleMetadata({\n      declarations: [Button, Header],\n      imports: [CommonModule],\n    }),\n  ],\n}"
             },
             {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/task.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<TaskComponent>",
+                "defaultValue": "{\r\n  /* 👇 The title prop is optional.\r\n   * See https://storybook.js.org/docs/angular/configure/overview#configure-story-loading\r\n   * to learn how to generate automatic titles\r\n   */\r\n  title: 'Task',\r\n  component: TaskComponent,\r\n}"
+            },
+            {
                 "name": "Pinned",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/components/task.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    task: {\r\n      ...Default.args?.task,\r\n      state: 'TASK_PINNED',\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "preview",
@@ -1614,16 +1665,6 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    size: 'small',\n    label: 'Button',\n  },\n}"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/components/task.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n    onPinTask: actionsData.onPinTask,\r\n    onArchiveTask: actionsData.onArchiveTask,\r\n  },\r\n})"
             }
         ],
         "functions": [
@@ -1748,6 +1789,17 @@
                 "deprecationMessage": "",
                 "description": "",
                 "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<TaskComponent>",
+                "file": "src/app/components/task.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
             }
         ],
         "enumerations": [],
@@ -1770,8 +1822,8 @@
                     "file": "src/app/components/task.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    task: {\r\n      ...Default.args?.task,\r\n      state: 'TASK_ARCHIVED',\r\n    },\r\n  },\r\n}"
                 },
                 {
                     "name": "Default",
@@ -1780,8 +1832,18 @@
                     "file": "src/app/components/task.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    task: {\r\n      id: '1',\r\n      title: 'Test Task',\r\n      state: 'TASK_INBOX',\r\n    },\r\n  },\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/task.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<TaskComponent>",
+                    "defaultValue": "{\r\n  /* 👇 The title prop is optional.\r\n   * See https://storybook.js.org/docs/angular/configure/overview#configure-story-loading\r\n   * to learn how to generate automatic titles\r\n   */\r\n  title: 'Task',\r\n  component: TaskComponent,\r\n}"
                 },
                 {
                     "name": "Pinned",
@@ -1790,18 +1852,8 @@
                     "file": "src/app/components/task.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/task.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n    onPinTask: actionsData.onPinTask,\r\n    onArchiveTask: actionsData.onArchiveTask,\r\n  },\r\n})"
+                    "defaultValue": "{\r\n  args: {\r\n    task: {\r\n      ...Default.args?.task,\r\n      state: 'TASK_PINNED',\r\n    },\r\n  },\r\n}"
                 }
             ],
             "src/stories/Button.stories.ts": [
@@ -2076,6 +2128,19 @@
                     "description": "",
                     "kind": 177
                 }
+            ],
+            "src/app/components/task.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<TaskComponent>",
+                    "file": "src/app/components/task.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
             ]
         }
     },
@@ -2165,7 +2230,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Pinned",
+                "name": "meta",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -2175,9 +2240,18 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Template",
+                "name": "Pinned",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/models/task.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Task",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {

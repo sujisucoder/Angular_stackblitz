@@ -19,6 +19,7 @@ type Story = StoryObj<TaskComponent>;
 
 
 export const actionsData = {
+  
   onPinTask: action('onPinTask'),
   onArchiveTask: action('onArchiveTask'),
 };
