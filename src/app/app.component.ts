@@ -12,7 +12,7 @@ export class AppComponent {
 
 
 @Component({
-  selector: 'app-task',
+  selector: 'app-task-simple',
   template: `
     <div class="list-item">
       <label [attr.aria-label]="task.title + ''" for="title">
@@ -27,7 +27,7 @@ export class AppComponent {
     </div>
   `,
 })
-export class TaskComponent {
+export class TaskSimpleComponent {
   @Input() 
   task?: any = {title : 'sojem'};
 
