@@ -20,6 +20,7 @@ const actionsData = {
   onArchiveTask: action('onArchiveTask'),
 };
 
+/*
 export const DefaultTask: Story = {
   render: () => ({
     props: {
@@ -33,6 +34,16 @@ export const DefaultTask: Story = {
     },
   }),
 };
+*/
+export const DefaultTask: Story = {
+    args: {
+        task: {
+            id: '1',
+            title: 'Test Task',
+            state: 'TASK_INBOX',
+          },
+    },
+}
 
 export const Pinned: Story = {
   render: () => ({

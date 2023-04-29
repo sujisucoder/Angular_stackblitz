@@ -320,7 +320,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<!--app-top-bar></app-top-bar>\r\n\r\n<div class=\"container\">\r\n  <router-outlet></router-outlet>\r\n</div-->\r\n\r\n<!-- \r\n  <wm-recipe-carousel></wm-recipe-carousel>\r\nCopyright Google LLC. All Rights Reserved.\r\nUse of this source code is governed by an MIT-style license that\r\ncan be found in the LICENSE file at https://angular.io/license\r\n-->\r\n\r\n<app-task></app-task>"
+            "templateData": "<!--app-top-bar></app-top-bar>\r\n\r\n<div class=\"container\">\r\n  <router-outlet></router-outlet>\r\n</div-->\r\n\r\n<!-- \r\n  <wm-recipe-carousel></wm-recipe-carousel>\r\nCopyright Google LLC. All Rights Reserved.\r\nUse of this source code is governed by an MIT-style license that\r\ncan be found in the LICENSE file at https://angular.io/license\r\n-->\r\n\r\n<app-task-list></app-task-list>"
         },
         {
             "name": "ButtonComponent",
@@ -1231,10 +1231,85 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "* {\r\n  box-sizing: border-box;\r\n  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\r\n  -webkit-tap-highlight-color: transparent;\r\n}\r\n\r\nhtml,\r\nbody {\r\n  margin: 0;\r\n  padding: 0;\r\n  font-size: 100%;\r\n  outline: none;\r\n  font-family: \"Nunito Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\r\n  font-style: 400;\r\n  color: #333;\r\n  font-size: 16px;\r\n  background-color: #26c6da;\r\n  -webkit-text-size-adjust: 100%;\r\n  -ms-text-size-adjust: 100%;\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n}\r\n\r\nh1,\r\np,\r\nlabel {\r\n  margin: 0;\r\n  padding: 0;\r\n  border: 0;\r\n  font-weight: normal;\r\n  font-style: normal;\r\n  font-size: 100%;\r\n  line-height: 1;\r\n  font-family: inherit;\r\n  vertical-align: baseline;\r\n  line-height: normal;\r\n  overflow: visible;\r\n  font-family: \"Nunito Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\r\n}\r\n\r\nbutton::-moz-focus-inner,\r\ninput::-moz-focus-inner {\r\n  border: 0;\r\n  padding: 0;\r\n}\r\n\r\nbutton,\r\ninput[type=\"button\"],\r\ninput[type=\"reset\"],\r\ninput[type=\"submit\"] {\r\n  cursor: pointer;\r\n  -webkit-appearance: button;\r\n}\r\n\r\n@keyframes spin {\r\n  0% {\r\n    transform: rotate(0deg);\r\n  }\r\n\r\n  100% {\r\n    transform: rotate(359deg);\r\n  }\r\n}\r\n\r\n@keyframes glow {\r\n  0%,\r\n  100% {\r\n    opacity: 1;\r\n  }\r\n\r\n  50% {\r\n    opacity: 0.5;\r\n  }\r\n}\r\n\r\n@font-face {\r\n  font-family: \"Nunito Sans\";\r\n  font-style: italic;\r\n  font-weight: 400;\r\n  src: url(https://fonts.gstatic.com/s/nunitosans/v6/pe0oMImSLYBIv1o4X1M8cce4E9lKcw.ttf)\r\n    format(\"truetype\");\r\n}\r\n\r\n@font-face {\r\n  font-family: \"Nunito Sans\";\r\n  font-style: normal;\r\n  font-weight: 400;\r\n  src: url(https://fonts.gstatic.com/s/nunitosans/v6/pe0qMImSLYBIv1o4X1M8cce9I94.ttf)\r\n    format(\"truetype\");\r\n}\r\n\r\n@font-face {\r\n  font-family: \"Nunito Sans\";\r\n  font-style: normal;\r\n  font-weight: 800;\r\n  src: url(https://fonts.gstatic.com/s/nunitosans/v6/pe03MImSLYBIv1o4X1M8cc8aBc5tU1Q.ttf)\r\n    format(\"truetype\");\r\n}\r\n\r\n.type-light {\r\n  font-family: \"Nunito Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\r\n  font-weight: 300;\r\n}\r\n\r\n.type-bold {\r\n  font-family: \"Nunito Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\r\n  font-weight: 800;\r\n}\r\n\r\n.type-italic {\r\n  font-family: \"Nunito Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\r\n  font-weight: 400;\r\n  font-style: italic;\r\n}\r\n\r\ninput[type=\"text\"],\r\ninput[type=\"email\"],\r\ninput[type=\"password\"],\r\ntextarea {\r\n  font-size: 14px;\r\n  line-height: 20px;\r\n  font-family: \"Nunito Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\r\n  font-style: 400;\r\n  padding: 0.75rem 0;\r\n  line-height: 1.5rem !important;\r\n  border: none;\r\n  border-radius: 0;\r\n  box-sizing: border-box;\r\n  color: #333;\r\n  outline: none;\r\n}\r\n\r\n.checkbox {\r\n  display: inline-block;\r\n  height: 3rem;\r\n  position: relative;\r\n  vertical-align: middle;\r\n  width: 44px;\r\n}\r\n\r\n.checkbox input[type=\"checkbox\"] {\r\n  font-size: 1em;\r\n  visibility: hidden;\r\n}\r\n\r\n.checkbox input[type=\"checkbox\"] + span:before {\r\n  position: absolute;\r\n  top: 50%;\r\n  right: auto;\r\n  bottom: auto;\r\n  left: 50%;\r\n  width: 0.85em;\r\n  height: 0.85em;\r\n  transform: translate3d(-50%, -50%, 0);\r\n  background: transparent;\r\n  box-shadow: #2cc5d2 0 0 0 1px inset;\r\n  content: \"\";\r\n  display: block;\r\n}\r\n\r\n.checkbox input[type=\"checkbox\"]:checked + span:before {\r\n  font-size: 16px;\r\n  line-height: 24px;\r\n  box-shadow: none;\r\n  color: #2cc5d2;\r\n  margin-top: -1px;\r\n  font-family: \"percolate\";\r\n  font-style: normal;\r\n  font-weight: normal;\r\n  font-variant: normal;\r\n  text-transform: none;\r\n  line-height: 1;\r\n\r\n  content: \"\\e65e\";\r\n}\r\n\r\n.input-symbol {\r\n  display: inline-block;\r\n  position: relative;\r\n}\r\n\r\n.input-symbol.error [class^=\"icon-\"],\r\n.input-symbol.error [class*=\" icon-\"] {\r\n  color: #ff4400;\r\n}\r\n\r\n.input-symbol [class^=\"icon-\"],\r\n.input-symbol [class*=\" icon-\"] {\r\n  left: 1em;\r\n}\r\n\r\n.input-symbol input {\r\n  padding-left: 3em;\r\n}\r\n\r\n.input-symbol input {\r\n  width: 100%;\r\n}\r\n\r\n.input-symbol input:focus + [class^=\"icon-\"],\r\n.input-symbol input:focus + [class*=\" icon-\"] {\r\n  color: #2cc5d2;\r\n}\r\n\r\n.input-symbol [class^=\"icon-\"],\r\n.input-symbol [class*=\" icon-\"] {\r\n  transition: all 300ms ease-in;\r\n  transform: translate3d(0, -50%, 0);\r\n  background: transparent;\r\n  color: #aaa;\r\n  font-size: 1em;\r\n  height: 1em;\r\n  position: absolute;\r\n  top: 50%;\r\n  width: 1em;\r\n}\r\n\r\n@font-face {\r\n  font-family: \"percolate\";\r\n  src: url(\"../../assets/icon/percolate.eot?-5w3um4\");\r\n  src: url(\"../../assets/icon/percolate.eot?#iefix5w3um4\")\r\n      format(\"embedded-opentype\"),\r\n    url(\"../../assets/icon/percolate.woff?5w3um4\") format(\"woff\"),\r\n    url(\"../../assets/icon/percolate.ttf?5w3um4\") format(\"truetype\"),\r\n    url(\"../../assets/icon/percolate.svg?5w3um4\") format(\"svg\");\r\n  font-weight: normal;\r\n  font-style: normal;\r\n}\r\n\r\n[class^=\"icon-\"],\r\n[class*=\" icon-\"] {\r\n  font-family: \"percolate\";\r\n\r\n  font-style: normal;\r\n  font-weight: normal;\r\n  font-variant: normal;\r\n  text-transform: none;\r\n  line-height: 1;\r\n}\r\n\r\n.icon-star:before {\r\n  content: \"\\e608\";\r\n}\r\n\r\n.icon-face-sad:before {\r\n  content: \"\\e60f\";\r\n}\r\n\r\n.icon-check:before {\r\n  content: \"\\e65e\";\r\n}\r\n\r\n.list-heading {\r\n  letter-spacing: 0.3em;\r\n  text-indent: 0.3em;\r\n  text-transform: uppercase;\r\n  font-family: \"Nunito Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\r\n  font-weight: 800;\r\n  font-size: 11px;\r\n  padding-left: 15px;\r\n  line-height: 40px;\r\n  background: #f8f8f8;\r\n  color: #aaa;\r\n}\r\n\r\n.list-heading .icon-sync {\r\n  opacity: 1;\r\n  animation: spin 2s infinite linear;\r\n  display: inline-block;\r\n  margin-right: 4px;\r\n}\r\n\r\n.list-item {\r\n  font-size: 14px;\r\n  line-height: 20px;\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  height: 3rem;\r\n  width: 100%;\r\n  background: white;\r\n  transition: all ease-out 150ms;\r\n}\r\n\r\n.list-item .title {\r\n  overflow: hidden;\r\n  text-overflow: ellipsis;\r\n  white-space: nowrap;\r\n  flex: 1;\r\n}\r\n\r\n.list-item input[type=\"text\"] {\r\n  background: transparent;\r\n  width: 100%;\r\n}\r\n\r\n.list-item input[type=\"text\"]:focus {\r\n  cursor: text;\r\n}\r\n\r\n.pin-button {\r\n  width: 3rem;\r\n  height: 3rem;\r\n  background: transparent;\r\n  border: none;\r\n  text-align: center;\r\n  transition: all 200ms ease-in;\r\n  color: #eee;\r\n  font-size: 16px;\r\n  line-height: 3rem;\r\n  outline: none;\r\n}\r\n\r\n.pin-button:hover {\r\n  color: #2cc5d2;\r\n}\r\n.pin-button:focus {\r\n  outline-color: transparent;\r\n}\r\n\r\n.pin-button:active {\r\n  color: #555;\r\n}\r\n\r\n.list-item.TASK_PINNED .icon-star {\r\n  color: #2cc5d2;\r\n}\r\n\r\n.list-item.TASK_ARCHIVED input[type=\"text\"] {\r\n  color: #4a5568;\r\n  text-decoration: line-through;\r\n}\r\n\r\n.list-item:hover {\r\n  background-image: linear-gradient(to bottom, #e5f9f7 0%, #f0fffd 100%);\r\n}\r\n\r\n.list-item:hover .checkbox {\r\n  cursor: pointer;\r\n}\r\n\r\n.list-item + .list-item {\r\n  border-top: 1px solid #f0f9fb;\r\n}\r\n\r\n.list-item.checked input[type=\"text\"] {\r\n  color: #ccc;\r\n  text-decoration: line-through;\r\n}\r\n\r\n.list-item.checked .delete-item {\r\n  display: inline-block;\r\n}\r\n\r\n.loading-item {\r\n  height: 3rem;\r\n  width: 100%;\r\n  background: white;\r\n  display: flex;\r\n  align-items: center;\r\n  line-height: 1rem;\r\n  padding-left: 16px;\r\n}\r\n\r\n.loading-item .glow-checkbox,\r\n.loading-item .glow-text span {\r\n  animation: glow 1.5s ease-in-out infinite;\r\n  background: #eee;\r\n  color: transparent;\r\n  cursor: progress;\r\n  display: inline-block;\r\n}\r\n\r\n.loading-item .glow-checkbox {\r\n  margin-right: 16px;\r\n  width: 12px;\r\n  height: 12px;\r\n}\r\n\r\n.loading-item + .loading-item {\r\n  border-top: 1px solid #f0f9fb;\r\n}\r\n\r\n.list-items {\r\n  position: relative;\r\n  background: white;\r\n  min-height: 288px;\r\n}\r\n\r\n.list-items .select-placeholder {\r\n  border: none;\r\n  width: 48px;\r\n}\r\n\r\n.wrapper-message {\r\n  position: absolute;\r\n  top: 45%;\r\n  right: 0;\r\n  bottom: auto;\r\n  left: 0;\r\n  width: auto;\r\n  height: auto;\r\n  transform: translate3d(0, -50%, 0);\r\n  text-align: center;\r\n}\r\n\r\n.wrapper-message [class^=\"icon-\"],\r\n.wrapper-message [class*=\" icon-\"] {\r\n  font-size: 48px;\r\n  line-height: 56px;\r\n  color: #2cc5d2;\r\n  display: block;\r\n}\r\n\r\n.wrapper-message .title-message {\r\n  font-size: 16px;\r\n  line-height: 24px;\r\n  font-family: \"Nunito Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\r\n  font-weight: 800;\r\n  color: #4a5568;\r\n}\r\n\r\n.wrapper-message .subtitle-message {\r\n  font-size: 14px;\r\n  line-height: 20px;\r\n  color: #4a5568;\r\n}\r\n\r\n.page.lists-show {\r\n  min-height: 100vh;\r\n  background: white;\r\n}\r\n\r\n.page.lists-show nav {\r\n  background: #d3edf4;\r\n  padding: 1.5rem 1.25rem;\r\n  text-align: center;\r\n}\r\n\r\n@media screen and (min-width: 40em) {\r\n  .page.lists-show nav {\r\n    text-align: left;\r\n  }\r\n}\r\n\r\n.page.lists-show nav .title-page {\r\n  font-size: 20px;\r\n  line-height: 24px;\r\n  line-height: 2rem;\r\n  cursor: pointer;\r\n  white-space: nowrap;\r\n  font-family: \"Nunito Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\r\n  overflow: hidden;\r\n  text-overflow: ellipsis;\r\n  font-weight: 800;\r\n  color: #1c3f53;\r\n  display: inline-block;\r\n  vertical-align: top;\r\n  max-width: 100%;\r\n}",
+                    "data": "",
                     "styleUrl": "./task.component.css"
                 }
             ],
+            "stylesData": ""
+        },
+        {
+            "name": "TaskListComponent",
+            "id": "component-TaskListComponent-eabe361605d3ae3063eb137da8d1f43e68d6165d3cf35a2c3d353cf8613b3959cebd09bea24b8853dc960d63b37f1fd25587b2706d436ac61c569cfdb4060018",
+            "file": "src/app/components/task-list.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-task-list",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<div class=\"list-items\">\n  <div *ngIf=\"loading\">loading</div>\n  <div *ngIf=\"!loading && tasks.length === 0\">empty</div>\n  <app-task\n    *ngFor=\"let task of tasks\"\n    [task]=\"task\"\n    (onArchiveTask)=\"onArchiveTask.emit($event)\"\n    (onPinTask)=\"onPinTask.emit($event)\"\n  >\n  </app-task>\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "loading",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nChecks if it's in loading state",
+                    "description": "<p>Checks if it&#39;s in loading state</p>\n",
+                    "line": 27,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "tasks",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nThe list of tasks",
+                    "description": "<p>The list of tasks</p>\n",
+                    "line": 24,
+                    "type": "Task[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onArchiveTask",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nEvent to change the task to archived",
+                    "description": "<p>Event to change the task to archived</p>\n",
+                    "line": 37,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onPinTask",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nEvent to change the task to pinned",
+                    "description": "<p>Event to change the task to pinned</p>\n",
+                    "line": 32,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\nimport { Task } from '../models/task.model';\r\n\r\n@Component({\r\n  selector: 'app-task-list',\r\n  template: `\r\n    <div class=\"list-items\">\r\n      <div *ngIf=\"loading\">loading</div>\r\n      <div *ngIf=\"!loading && tasks.length === 0\">empty</div>\r\n      <app-task\r\n        *ngFor=\"let task of tasks\"\r\n        [task]=\"task\"\r\n        (onArchiveTask)=\"onArchiveTask.emit($event)\"\r\n        (onPinTask)=\"onPinTask.emit($event)\"\r\n      >\r\n      </app-task>\r\n    </div>\r\n  `,\r\n})\r\nexport class TaskListComponent {\r\n  /** The list of tasks */\r\n  @Input() tasks: Task[] = [];\r\n\r\n  /** Checks if it's in loading state */\r\n  @Input() loading = false;\r\n\r\n  /** Event to change the task to pinned */\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output()\r\n  onPinTask = new EventEmitter<Event>();\r\n\r\n  /** Event to change the task to archived */\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output()\r\n  onArchiveTask = new EventEmitter<Event>();\r\n}",
+            "assetsDirs": [],
+            "styleUrlsData": "",
             "stylesData": ""
         },
         {
@@ -1339,13 +1414,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-e78e2ca8c63d7afb0243b81e3d9cc8019586b745b1daf1622ea99662d8896c98c522c789e44afa85fa9f1a3f0419d4e10767b1ebe259531c2482e7352c2fd152",
+            "id": "module-AppModule-169dbad4fe5ce4dcc68abc788bf33e558b4d7bdeeaf7b834ca423c5d331142c6badf194ff423dba631dc971b737a1e4df1308223d157c4ba2f25f3c27be6e8b8",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { RouterModule } from '@angular/router';\r\nimport { ReactiveFormsModule } from '@angular/forms';\r\n\r\nimport { AppComponent, TaskSimpleComponent } from './app.component';\r\nimport {TaskComponent}  from './components/task.component';\r\nimport { TopBarComponent } from './top-bar/top-bar.component';\r\nimport { ProductListComponent } from './product-list/product-list.component';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { RecipeCarouselModule } from './recipe-carousel.component';\r\n@NgModule({\r\n  imports: [\r\n    BrowserModule,\r\n    ReactiveFormsModule,\r\n    RouterModule.forRoot([\r\n      { path: '', component: ProductListComponent },\r\n    ]),\r\n    BrowserAnimationsModule,\r\n    RecipeCarouselModule\r\n  ],\r\n  declarations: [\r\n    AppComponent,\r\n    TopBarComponent,\r\n    ProductListComponent,\r\n    TaskSimpleComponent,\r\n    TaskComponent\r\n  ],\r\n  bootstrap: [\r\n    AppComponent\r\n  ]\r\n})\r\nexport class AppModule { }\r\n\r\n\r\n/*\r\nCopyright Google LLC. All Rights Reserved.\r\nUse of this source code is governed by an MIT-style license that\r\ncan be found in the LICENSE file at https://angular.io/license\r\n*/",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { RouterModule } from '@angular/router';\r\nimport { ReactiveFormsModule } from '@angular/forms';\r\n\r\nimport { AppComponent, TaskSimpleComponent } from './app.component';\r\nimport {TaskComponent}  from './components/task.component';\r\nimport {TaskListComponent}  from './components/task-list.component' \r\nimport { TopBarComponent } from './top-bar/top-bar.component';\r\nimport { ProductListComponent } from './product-list/product-list.component';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { RecipeCarouselModule } from './recipe-carousel.component';\r\n@NgModule({\r\n  imports: [\r\n    BrowserModule,\r\n    ReactiveFormsModule,\r\n    RouterModule.forRoot([\r\n      { path: '', component: ProductListComponent },\r\n    ]),\r\n    BrowserAnimationsModule,\r\n    RecipeCarouselModule\r\n  ],\r\n  declarations: [\r\n    AppComponent,\r\n    TopBarComponent,\r\n    ProductListComponent,\r\n    TaskSimpleComponent,\r\n    TaskComponent,\r\n    TaskListComponent\r\n  ],\r\n  bootstrap: [\r\n    AppComponent\r\n  ]\r\n})\r\nexport class AppModule { }\r\n\r\n\r\n/*\r\nCopyright Google LLC. All Rights Reserved.\r\nUse of this source code is governed by an MIT-style license that\r\ncan be found in the LICENSE file at https://angular.io/license\r\n*/",
             "children": [
                 {
                     "type": "providers",
@@ -1362,6 +1437,9 @@
                         },
                         {
                             "name": "TaskComponent"
+                        },
+                        {
+                            "name": "TaskListComponent"
                         },
                         {
                             "name": "TaskSimpleComponent"
@@ -1588,6 +1666,16 @@
                 "name": "actionsData",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/components/task-list.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n    onPinTask: action('onPinTask'),\r\n    onArchiveTask: action('onArchiveTask'),\r\n}"
+            },
+            {
+                "name": "actionsData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/components/task.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1615,6 +1703,16 @@
                 "defaultValue": "{\r\n  render: () => ({\r\n    props: {\r\n      task: {\r\n        id: '1',\r\n        title: 'Test Task',\r\n        state: 'TASK_ARCHIVED',\r\n      },\r\n      onPinTask: actionsData.onPinTask,\r\n      onArchiveTask: actionsData.onArchiveTask,\r\n    },\r\n  }),\r\n}"
             },
             {
+                "name": "DefaultList",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/task-list.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n    args: {\r\n            tasks: [\r\n                {  state: 'TASK_INBOX', id: '1', title: 'Task 1' },\r\n                {   state: 'TASK_INBOX', id: '2', title: 'Task 2' },\r\n                {   state: 'TASK_INBOX', id: '3', title: 'Task 3' },\r\n                {   state: 'TASK_INBOX', id: '4', title: 'Task 4' },\r\n                {  state: 'TASK_INBOX', id: '5', title: 'Task 5' },\r\n                {   state: 'TASK_INBOX',id: '6', title: 'Task 6' },\r\n            ],\r\n        },\r\n}"
+            },
+            {
                 "name": "DefaultTask",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1622,7 +1720,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  render: () => ({\r\n    props: {\r\n      task: {\r\n        id: '1',\r\n        title: 'Test Task',\r\n        state: 'TASK_INBOX',\r\n      },\r\n      onPinTask: actionsData.onPinTask,\r\n      onArchiveTask: actionsData.onArchiveTask,\r\n    },\r\n  }),\r\n}"
+                "defaultValue": "{\r\n    args: {\r\n        task: {\r\n            id: '1',\r\n            title: 'Test Task',\r\n            state: 'TASK_INBOX',\r\n          },\r\n    },\r\n}"
             },
             {
                 "name": "Large",
@@ -1713,6 +1811,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<Page>",
                 "defaultValue": "{\r\n  title: 'Example/Page',\r\n  component: Page,\r\n  parameters: {\r\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\r\n    layout: 'fullscreen',\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [Button, Header],\r\n      imports: [CommonModule],\r\n    }),\r\n  ],\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/task-list.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<TaskListComponent>",
+                "defaultValue": "{\r\n    /* 👇 The title prop is optional.\r\n     * See https://storybook.js.org/docs/angular/configure/overview#configure-story-loading\r\n     * to learn how to generate automatic titles\r\n     */\r\n    title: 'TaskListComponent',\r\n    component: TaskListComponent,\r\n    decorators: [\r\n        moduleMetadata({\r\n            //👇 Imports both components to allow component composition with Storybook\r\n            declarations: [TaskListComponent, TaskComponent],\r\n            imports: [CommonModule],\r\n        }),\r\n        //👇 Wraps our stories with a decorator\r\n        componentWrapperDecorator(story => `<div style=\"margin: 3em\">${story}</div>`),\r\n    ],\r\n}"
             },
             {
                 "name": "meta",
@@ -1813,6 +1921,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    size: 'small',\r\n    label: 'Button',\r\n  },\r\n}"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/task-list.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n    args: {\r\n        onPinTask: TaskStories.DefaultTask.args?.onPinTask,\r\n        onArchiveTask: TaskStories.DefaultTask.args?.onArchiveTask,\r\n      }\r\n}"
             }
         ],
         "functions": [
@@ -1953,6 +2071,17 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<TaskListComponent>",
+                "file": "src/app/components/task-list.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<TaskComponent>",
                 "file": "src/app/components/task.stories.ts",
                 "deprecated": false,
@@ -1963,6 +2092,48 @@
         ],
         "enumerations": [],
         "groupedVariables": {
+            "src/app/components/task-list.stories.ts": [
+                {
+                    "name": "actionsData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/task-list.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n    onPinTask: action('onPinTask'),\r\n    onArchiveTask: action('onArchiveTask'),\r\n}"
+                },
+                {
+                    "name": "DefaultList",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/task-list.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    args: {\r\n            tasks: [\r\n                {  state: 'TASK_INBOX', id: '1', title: 'Task 1' },\r\n                {   state: 'TASK_INBOX', id: '2', title: 'Task 2' },\r\n                {   state: 'TASK_INBOX', id: '3', title: 'Task 3' },\r\n                {   state: 'TASK_INBOX', id: '4', title: 'Task 4' },\r\n                {  state: 'TASK_INBOX', id: '5', title: 'Task 5' },\r\n                {   state: 'TASK_INBOX',id: '6', title: 'Task 6' },\r\n            ],\r\n        },\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/task-list.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<TaskListComponent>",
+                    "defaultValue": "{\r\n    /* 👇 The title prop is optional.\r\n     * See https://storybook.js.org/docs/angular/configure/overview#configure-story-loading\r\n     * to learn how to generate automatic titles\r\n     */\r\n    title: 'TaskListComponent',\r\n    component: TaskListComponent,\r\n    decorators: [\r\n        moduleMetadata({\r\n            //👇 Imports both components to allow component composition with Storybook\r\n            declarations: [TaskListComponent, TaskComponent],\r\n            imports: [CommonModule],\r\n        }),\r\n        //👇 Wraps our stories with a decorator\r\n        componentWrapperDecorator(story => `<div style=\"margin: 3em\">${story}</div>`),\r\n    ],\r\n}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/task-list.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    args: {\r\n        onPinTask: TaskStories.DefaultTask.args?.onPinTask,\r\n        onArchiveTask: TaskStories.DefaultTask.args?.onArchiveTask,\r\n      }\r\n}"
+                }
+            ],
             "src/app/components/task.stories.ts": [
                 {
                     "name": "actionsData",
@@ -1992,7 +2163,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  render: () => ({\r\n    props: {\r\n      task: {\r\n        id: '1',\r\n        title: 'Test Task',\r\n        state: 'TASK_INBOX',\r\n      },\r\n      onPinTask: actionsData.onPinTask,\r\n      onArchiveTask: actionsData.onArchiveTask,\r\n    },\r\n  }),\r\n}"
+                    "defaultValue": "{\r\n    args: {\r\n        task: {\r\n            id: '1',\r\n            title: 'Test Task',\r\n            state: 'TASK_INBOX',\r\n          },\r\n    },\r\n}"
                 },
                 {
                     "name": "meta",
@@ -2353,6 +2524,19 @@
                     "kind": 177
                 }
             ],
+            "src/app/components/task-list.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<TaskListComponent>",
+                    "file": "src/app/components/task-list.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
             "src/app/components/task.stories.ts": [
                 {
                     "name": "Story",
@@ -2370,7 +2554,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 4,
+        "count": 5,
         "status": "low",
         "files": [
             {
@@ -2409,6 +2593,55 @@
                 "coveragePercent": 83,
                 "coverageCount": "5/6",
                 "status": "very-good"
+            },
+            {
+                "filePath": "src/app/components/task-list.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TaskListComponent",
+                "coveragePercent": 80,
+                "coverageCount": "4/5",
+                "status": "very-good"
+            },
+            {
+                "filePath": "src/app/components/task-list.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "actionsData",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/task-list.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DefaultList",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/task-list.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/task-list.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
             },
             {
                 "filePath": "src/app/components/task.component.ts",

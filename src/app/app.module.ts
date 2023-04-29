@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent, TaskSimpleComponent } from './app.component';
 import {TaskComponent}  from './components/task.component';
+import {TaskListComponent}  from './components/task-list.component' 
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -24,7 +25,8 @@ import { RecipeCarouselModule } from './recipe-carousel.component';
     TopBarComponent,
     ProductListComponent,
     TaskSimpleComponent,
-    TaskComponent
+    TaskComponent,
+    TaskListComponent
   ],
   bootstrap: [
     AppComponent
