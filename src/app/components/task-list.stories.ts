@@ -56,19 +56,62 @@ export const DefaultList: Story = {
             ],
         },
 }
-    /*
+  
 export const WithPinnedTasks: Story = {
-render: () => ({
-    props: {
+
+    args:{
+
+        ...DefaultList.args?.tasks?.slice(0,5),
 
         tasks: [
-            ...Default.args['tasks'].slice(0, 5),
+          
             { id: '6', title: 'Task 6 (pinned)', state: 'TASK_PINNED' },
-        ],
-    },
-})
+        ]
+
+    }
 }
- 
+
+export const Loading: Story ={
+    args : {
+        tasks: [],
+        loading: true,
+    }
+
+}
+
+export const Empty: Story = {
+   args : {
+        // Shaping the stories through args composition.
+        // Inherited data coming from the Loading story.
+        // ...Loading.args,
+        ...Loading.args,
+        loading: false,
+    }
+    
+
+}
+
+
+// args:{
+//     tasks: [
+//         ...DefaultList.args?['tasks'].slice(0, 5),
+//         { id: '6', title: 'Task 6 (pinned)', state: 'TASK_PINNED' },
+//     ],
+
+// }
+
+
+// render: () => ({
+//     props: {
+
+//         tasks: [
+//             ...DefaultList.args?['tasks'].slice(0, 5),
+//             { id: '6', title: 'Task 6 (pinned)', state: 'TASK_PINNED' },
+//         ],
+//     },
+// })
+
+ /*
 
 export const Loading = Template.bind({});
 Loading.args = {

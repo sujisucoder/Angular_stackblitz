@@ -49,7 +49,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   cursor: pointer;
-  -webkit-appearance: button;
+  
 }
 
 @keyframes spin {
@@ -416,7 +416,7 @@ textarea {
   line-height: 24px;
   font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 800;
-  color: #4a5568;
+  color: #00ed43;
 }
 
 .wrapper-message .subtitle-message {
