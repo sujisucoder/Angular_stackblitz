@@ -9,6 +9,7 @@ import { TaskComponent } from './task.component';
 import { action } from '@storybook/addon-actions';
 
 import * as TaskStories from './task.stories';
+import { Task } from '../models/task.model';
 
 const meta: Meta<TaskListComponent> = {
     /* 👇 The title prop is optional.
@@ -17,6 +18,7 @@ const meta: Meta<TaskListComponent> = {
      */
     title: 'TaskListComponent',
     component: TaskListComponent,
+    tags: ['autodocs'],
     decorators: [
         moduleMetadata({
             //👇 Imports both components to allow component composition with Storybook
@@ -24,7 +26,10 @@ const meta: Meta<TaskListComponent> = {
             imports: [CommonModule],
         }),
         //👇 Wraps our stories with a decorator
-        componentWrapperDecorator(story => `<div style="margin: 3em">${story}</div>`),
+        // componentWrapperDecorator(story => `<div style="margin: 3em">${story}</div>`),
+        componentWrapperDecorator(
+            (story) => `<div style="margin: 3em">${story}</div>`
+          ),
     ],
 };
 
@@ -46,29 +51,51 @@ export const Template: Story = {
 
 export const DefaultList: Story = {
     args: {
-            tasks: [
-                {  state: 'TASK_INBOX', id: '1', title: 'Task 1' },
-                {   state: 'TASK_INBOX', id: '2', title: 'Task 2' },
-                {   state: 'TASK_INBOX', id: '3', title: 'Task 3' },
-                {   state: 'TASK_INBOX', id: '4', title: 'Task 4' },
-                {  state: 'TASK_INBOX', id: '5', title: 'Task 5' },
-                {   state: 'TASK_INBOX',id: '6', title: 'Task 6' },
-            ],
-        },
-}
+        tasks: [
+          {
+            ...(TaskStories.DefaultTask.args?.['task'] as Task),
+            id: '1',
+            title: 'Task 1',
+          },
+          {
+            ...(TaskStories.DefaultTask.args?.['task'] as Task),
+            id: '2',
+            title: 'Task 2',
+          },
+          {
+            ...(TaskStories.DefaultTask.args?.['task'] as Task),
+            id: '3',
+            title: 'Task 3',
+          },
+          {
+            ...(TaskStories.DefaultTask.args?.['task'] as Task),
+            id: '4',
+            title: 'Task 4',
+          },
+          {
+            ...(TaskStories.DefaultTask.args?.['task'] as Task),
+            id: '5',
+            title: 'Task 5',
+          },
+          {
+            ...(TaskStories.DefaultTask.args?.['task'] as Task),
+            id: '6',
+            title: 'Task 6',
+          },
+        ],
+      },
+};
+
   
 export const WithPinnedTasks: Story = {
 
-    args:{
+args:{
+    tasks: [
+        ...(DefaultList.args?.['tasks'] as Task[] ).slice(0, 5),
+        { id: '6', title: 'Task 6 (pinned)', state: 'TASK_PINNED' },
+    ],
 
-        ...DefaultList.args?.tasks?.slice(0,5),
-
-        tasks: [
-          
-            { id: '6', title: 'Task 6 (pinned)', state: 'TASK_PINNED' },
-        ]
-
-    }
+}
 }
 
 export const Loading: Story ={

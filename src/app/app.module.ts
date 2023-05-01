@@ -10,6 +10,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecipeCarouselModule } from './recipe-carousel.component';
+import { PureTaskListComponent } from './pure-tasklist.component'
 @NgModule({
   imports: [
     BrowserModule,
@@ -26,7 +27,8 @@ import { RecipeCarouselModule } from './recipe-carousel.component';
     ProductListComponent,
     TaskSimpleComponent,
     TaskComponent,
-    TaskListComponent
+    TaskListComponent,
+    PureTaskListComponent
   ],
   bootstrap: [
     AppComponent
