@@ -1852,6 +1852,16 @@
                 "name": "actionsData",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/Copypure-tasklist.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  onPinTask: action('onPinTask'),\r\n  onArchiveTask: action('onArchiveTask'),\r\n}"
+            },
+            {
+                "name": "actionsData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/components/task-list.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1912,21 +1922,21 @@
                 "name": "Empty",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/Copypure-tasklist.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    ...Loading.args,\r\n    loading: false,\r\n  },\r\n}"
+            },
+            {
+                "name": "Empty",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/components/task-list.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n   args : {\r\n        // Shaping the stories through args composition.\r\n        // Inherited data coming from the Loading story.\r\n        // ...Loading.args,\r\n        ...Loading.args,\r\n        loading: false,\r\n    }\r\n    \r\n\r\n}"
-            },
-            {
-                "name": "jaas",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/pure-tasklist.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n\r\n    args:{\r\n        loading:false,\r\n        \r\n    }\r\n\r\n}"
             },
             {
                 "name": "Large",
@@ -1947,6 +1957,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n\r\n    args:{\r\n        loading:true,\r\n        \r\n    }\r\n\r\n}"
+            },
+            {
+                "name": "Loading",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/Copypure-tasklist.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    tasks: [],\r\n    loading: true,\r\n  },\r\n}"
             },
             {
                 "name": "Loading",
@@ -1997,6 +2017,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  render: (args: Page) => ({\r\n    props: args,\r\n  }),\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/Copypure-tasklist.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<TaskListComponent>",
+                "defaultValue": "{\r\n  /* 👇 The title prop is optional.\r\n   * See https://storybook.js.org/docs/angular/configure/overview#configure-story-loading\r\n   * to learn how to generate automatic titles\r\n   */\r\n  title: 'PureTaskListChangeComponent',\r\n  component: TaskListComponent,\r\n  decorators: [\r\n    moduleMetadata({\r\n      //👇 Imports both components to allow component composition with Storybook\r\n      declarations: [TaskListComponent, TaskComponent],\r\n      imports: [CommonModule],\r\n    }),\r\n    //👇 Wraps our stories with a decorator\r\n    componentWrapperDecorator(\r\n      (story) => `<div style=\"margin: 3em\">${story}</div>`\r\n    ),\r\n  ],\r\n}"
             },
             {
                 "name": "meta",
@@ -2067,6 +2097,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<TaskComponent>",
                 "defaultValue": "{\r\n  /* 👇 The title prop is optional.\r\n   * See https://storybook.js.org/docs/angular/configure/overview#configure-story-loading\r\n   * to learn how to generate automatic titles\r\n   */\r\n  title: 'TaskComponent',\r\n  component: TaskComponent,\r\n}"
+            },
+            {
+                "name": "noTasks",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/pure-tasklist.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n\r\n    args:{\r\n        loading:false,\r\n        \r\n    }\r\n\r\n}"
             },
             {
                 "name": "Pinned",
@@ -2159,6 +2199,26 @@
                 "defaultValue": "{\r\n  args: {\r\n    size: 'small',\r\n    label: 'Button',\r\n  },\r\n}"
             },
             {
+                "name": "TaskDefaultList",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/Copypure-tasklist.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    tasks: [\r\n      {\r\n        ...(TaskStories.DefaultTask.args?.['task'] as Task),\r\n        id: '1',\r\n        title: 'Task 1',\r\n      },\r\n      {\r\n        ...(TaskStories.DefaultTask.args?.['task'] as Task),\r\n        id: '2',\r\n        title: 'Task 2',\r\n      },\r\n      {\r\n        ...(TaskStories.DefaultTask.args?.['task'] as Task),\r\n        id: '3',\r\n        title: 'Task 3',\r\n      },\r\n      {\r\n        ...(TaskStories.DefaultTask.args?.['task'] as Task),\r\n        id: '4',\r\n        title: 'Task 4',\r\n      },\r\n      {\r\n        ...(TaskStories.DefaultTask.args?.['task'] as Task),\r\n        id: '5',\r\n        title: 'Task 5',\r\n      },\r\n      {\r\n        ...(TaskStories.DefaultTask.args?.['task'] as Task),\r\n        id: '6',\r\n        title: 'Task 6',\r\n      },\r\n    ],\r\n  },\r\n}"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/Copypure-tasklist.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    onPinTask: TaskStories.DefaultTask.args?.onPinTask,\r\n    onArchiveTask: TaskStories.DefaultTask.args?.onArchiveTask,\r\n  },\r\n}"
+            },
+            {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2167,6 +2227,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n    args: {\r\n        onPinTask: TaskStories.DefaultTask.args?.onPinTask,\r\n        onArchiveTask: TaskStories.DefaultTask.args?.onArchiveTask,\r\n      }\r\n}"
+            },
+            {
+                "name": "WithPinnedTasks",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/Copypure-tasklist.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    tasks: [\r\n      ...(TaskListStories.DefaultList.args?.['tasks'] as Task[]).slice(\r\n        0,\r\n        5\r\n      ),\r\n      { id: '6', title: 'Task 6 (pinned)', state: 'TASK_PINNED' },\r\n    ],\r\n  },\r\n}"
             },
             {
                 "name": "WithPinnedTasks",
@@ -2273,6 +2343,17 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<TaskListComponent>",
+                "file": "src/app/Copypure-tasklist.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<PureTaskListComponent>",
                 "file": "src/app/pure-tasklist.stories.ts",
                 "deprecated": false,
@@ -2349,6 +2430,78 @@
         ],
         "enumerations": [],
         "groupedVariables": {
+            "src/app/Copypure-tasklist.stories.ts": [
+                {
+                    "name": "actionsData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/Copypure-tasklist.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  onPinTask: action('onPinTask'),\r\n  onArchiveTask: action('onArchiveTask'),\r\n}"
+                },
+                {
+                    "name": "Empty",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/Copypure-tasklist.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    ...Loading.args,\r\n    loading: false,\r\n  },\r\n}"
+                },
+                {
+                    "name": "Loading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/Copypure-tasklist.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    tasks: [],\r\n    loading: true,\r\n  },\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/Copypure-tasklist.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<TaskListComponent>",
+                    "defaultValue": "{\r\n  /* 👇 The title prop is optional.\r\n   * See https://storybook.js.org/docs/angular/configure/overview#configure-story-loading\r\n   * to learn how to generate automatic titles\r\n   */\r\n  title: 'PureTaskListChangeComponent',\r\n  component: TaskListComponent,\r\n  decorators: [\r\n    moduleMetadata({\r\n      //👇 Imports both components to allow component composition with Storybook\r\n      declarations: [TaskListComponent, TaskComponent],\r\n      imports: [CommonModule],\r\n    }),\r\n    //👇 Wraps our stories with a decorator\r\n    componentWrapperDecorator(\r\n      (story) => `<div style=\"margin: 3em\">${story}</div>`\r\n    ),\r\n  ],\r\n}"
+                },
+                {
+                    "name": "TaskDefaultList",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/Copypure-tasklist.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    tasks: [\r\n      {\r\n        ...(TaskStories.DefaultTask.args?.['task'] as Task),\r\n        id: '1',\r\n        title: 'Task 1',\r\n      },\r\n      {\r\n        ...(TaskStories.DefaultTask.args?.['task'] as Task),\r\n        id: '2',\r\n        title: 'Task 2',\r\n      },\r\n      {\r\n        ...(TaskStories.DefaultTask.args?.['task'] as Task),\r\n        id: '3',\r\n        title: 'Task 3',\r\n      },\r\n      {\r\n        ...(TaskStories.DefaultTask.args?.['task'] as Task),\r\n        id: '4',\r\n        title: 'Task 4',\r\n      },\r\n      {\r\n        ...(TaskStories.DefaultTask.args?.['task'] as Task),\r\n        id: '5',\r\n        title: 'Task 5',\r\n      },\r\n      {\r\n        ...(TaskStories.DefaultTask.args?.['task'] as Task),\r\n        id: '6',\r\n        title: 'Task 6',\r\n      },\r\n    ],\r\n  },\r\n}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/Copypure-tasklist.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    onPinTask: TaskStories.DefaultTask.args?.onPinTask,\r\n    onArchiveTask: TaskStories.DefaultTask.args?.onArchiveTask,\r\n  },\r\n}"
+                },
+                {
+                    "name": "WithPinnedTasks",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/Copypure-tasklist.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    tasks: [\r\n      ...(TaskListStories.DefaultList.args?.['tasks'] as Task[]).slice(\r\n        0,\r\n        5\r\n      ),\r\n      { id: '6', title: 'Task 6 (pinned)', state: 'TASK_PINNED' },\r\n    ],\r\n  },\r\n}"
+                }
+            ],
             "src/app/components/task-list.stories.ts": [
                 {
                     "name": "actionsData",
@@ -2525,38 +2678,6 @@
                     "defaultValue": "{\r\n  render: () => ({\r\n    props: {\r\n      task: {\r\n        id: '1',\r\n        title: 'Test Task',\r\n        state: 'TASK_INBOX',\r\n      },\r\n    },\r\n  }),\r\n}"
                 }
             ],
-            "src/app/pure-tasklist.stories.ts": [
-                {
-                    "name": "jaas",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/pure-tasklist.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n\r\n    args:{\r\n        loading:false,\r\n        \r\n    }\r\n\r\n}"
-                },
-                {
-                    "name": "loading",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/pure-tasklist.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n\r\n    args:{\r\n        loading:true,\r\n        \r\n    }\r\n\r\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/pure-tasklist.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<PureTaskListComponent>",
-                    "defaultValue": "{\r\n    /* 👇 The title prop is optional.\r\n     * See https://storybook.js.org/docs/angular/configure/overview#configure-story-loading\r\n     * to learn how to generate automatic titles\r\n     */\r\n    title: 'PureTaskListComponent',\r\n    component: PureTaskListComponent,\r\n    argTypes: {\r\n     \r\n    },\r\n  }"
-                }
-            ],
             "src/stories/Button.stories.ts": [
                 {
                     "name": "Large",
@@ -2607,6 +2728,38 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\r\n  args: {\r\n    size: 'small',\r\n    label: 'Button',\r\n  },\r\n}"
+                }
+            ],
+            "src/app/pure-tasklist.stories.ts": [
+                {
+                    "name": "loading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/pure-tasklist.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n\r\n    args:{\r\n        loading:true,\r\n        \r\n    }\r\n\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/pure-tasklist.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<PureTaskListComponent>",
+                    "defaultValue": "{\r\n    /* 👇 The title prop is optional.\r\n     * See https://storybook.js.org/docs/angular/configure/overview#configure-story-loading\r\n     * to learn how to generate automatic titles\r\n     */\r\n    title: 'PureTaskListComponent',\r\n    component: PureTaskListComponent,\r\n    argTypes: {\r\n     \r\n    },\r\n  }"
+                },
+                {
+                    "name": "noTasks",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/pure-tasklist.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n\r\n    args:{\r\n        loading:false,\r\n        \r\n    }\r\n\r\n}"
                 }
             ],
             "src/stories/Header.stories.ts": [
@@ -2791,6 +2944,19 @@
         },
         "groupedEnumerations": {},
         "groupedTypeAliases": {
+            "src/app/Copypure-tasklist.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<TaskListComponent>",
+                    "file": "src/app/Copypure-tasklist.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
             "src/app/pure-tasklist.stories.ts": [
                 {
                     "name": "Story",
@@ -2895,6 +3061,76 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "preview",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Copypure-tasklist.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "actionsData",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Copypure-tasklist.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Empty",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Copypure-tasklist.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Loading",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Copypure-tasklist.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Copypure-tasklist.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TaskDefaultList",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Copypure-tasklist.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Copypure-tasklist.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithPinnedTasks",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -3115,16 +3351,6 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "jaas",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/pure-tasklist.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
                 "name": "loading",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -3136,6 +3362,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/pure-tasklist.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "noTasks",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
